@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio académico de Stiff Angel Rojas Ruiz">
+  <title>Portafolio | Stiff Angel Rojas Ruiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="login-overlay" id="loginOverlay">
+    <div class="login-card">
+      <p class="eyebrow">🔐 ACCESO AL PORTAFOLIO</p>
+      <h2>Portafolio de Angel</h2>
+      <p class="login-sub">Inicia sesión para gestionar tus archivos. Como visitante puedes explorar y descargar sin modificar nada.</p>
+      <form id="loginForm">
+        <label>Usuario<input id="loginUser" autocomplete="username" required></label>
+        <label>Contraseña<input id="loginPass" type="password" autocomplete="current-password" required></label>
+        <p class="login-error" id="loginError"></p>
+        <button class="button button-primary" type="submit">Iniciar sesión →</button>
+        <button class="button button-quiet" type="button" id="loginGuestBtn">Entrar como visitante</button>
+      </form>
+    </div>
+  </div>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#inicio"><span class="brand-mark">A</span><span>ANGEL<span class="brand-dot">.</span></span></a>
+    <nav>
+      <a href="#inicio">Inicio</a><a href="#sobre-mi">Sobre mí</a><a href="#trabajos">Mis trabajos</a>
+    </nav>
+    <button class="top-cta" id="loginToggleBtn" type="button">Iniciar sesión</button>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse"></span> PORTAFOLIO ACADÉMICO</p>
+        <h1>Hola, soy<br><span>Stiff Angel</span><br>Rojas Ruiz<span class="period">.</span></h1>
+        <p class="hero-lead">Estudiante de Ingeniería de Sistemas y Cómputo, explorando la tecnología, el desarrollo de software y nuevas formas de crear.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#trabajos">Ver mis trabajos <span>↓</span></a><a class="button button-quiet" href="#sobre-mi">Conóceme más</a></div>
+        <div class="hero-meta"><div><strong>01</strong><span>Aprender</span></div><div><strong>02</strong><span>Crear</span></div><div><strong>03</strong><span>Mejorar</span></div></div>
+      </div>
+      <div class="hero-art">
+        <div class="art-orbit orbit-a"></div><div class="art-orbit orbit-b"></div>
+        <div class="art-card">
+          <div class="card-top"><span>MI ESPACIO CREATIVO</span><span class="card-dot"></span></div>
+          <div class="portrait-placeholder"><div class="portrait-icon">AR</div><span>Tu fotografía aquí</span><small>Reemplaza esta área con tu foto</small></div>
+          <div class="art-card-bottom"><div><small>ESTUDIANTE DE</small><strong>Ingeniería de Sistemas</strong></div><span class="arrow-bubble">↗</span></div>
+        </div>
+        <div class="floating-tag tag-top">✦ Ideas en construcción</div><div class="floating-tag tag-bottom"><span class="mini-dot"></span> Siempre aprendiendo</div>
+        <span class="spark spark-one">✳</span><span class="spark spark-two">✦</span>
+      </div>
+    </section>
+
+    <section class="about section-wrap" id="sobre-mi">
+      <div class="section-heading"><p class="eyebrow">01 / PRESENTACIÓN</p><h2>Un poco <span>sobre mí</span></h2></div>
+      <div class="about-grid">
+        <p class="about-intro">Este espacio reúne mi recorrido académico, mis prácticas y los proyectos que voy desarrollando mientras aprendo nuevas tecnologías.</p>
+        <div class="info-card"><span class="info-icon">⌘</span><div><small>MI CARRERA</small><strong>Ingeniería de Sistemas y Cómputo</strong></div></div>
+        <div class="info-card"><span class="info-icon">⌖</span><div><small>MI ENFOQUE</small><strong>Programación · Tecnología · Aprendizaje</strong></div></div>
+      </div>
+      <p class="edit-hint">Personaliza tu presentación editando los textos de <code>index.html</code>. No publiques datos sensibles como tu dirección, teléfono o documentos personales.</p>
+    </section>
+
+    <section class="work section-wrap" id="trabajos">
+      <div class="section-heading work-heading"><div><p class="eyebrow">02 / ARCHIVO ACADÉMICO</p><h2>Mis <span>trabajos</span></h2><p class="section-subtitle">Organiza tus asignaturas y guarda tus archivos en carpetas y subcarpetas.</p></div><div class="storage-chip"><span class="mini-dot"></span> Guardado en este navegador</div></div>
+      <div class="manager">
+        <aside class="manager-sidebar">
+          <div class="sidebar-title"><span>MI BIBLIOTECA</span><span class="folder-glyph">▣</span></div>
+          <button class="side-link active" id="allItemsBtn">▦ <span>Todos los elementos</span></button>
+          <div class="sidebar-note"><span class="mini-dot"></span> Tus cambios se guardan en este navegador.</div>
+          <div class="sidebar-warning">Importante: esta primera versión guarda los archivos en este dispositivo y navegador. No los sube a internet ni los sincroniza con otros equipos.</div>
+        </aside>
+        <div class="manager-main">
+          <div class="manager-toolbar"><div><p class="crumb">MI PORTAFOLIO <span>/</span> <strong id="currentFolderName">Todos los elementos</strong></p><h3 id="managerTitle">Mis archivos</h3></div>
+            <div class="toolbar-actions"><button class="button button-small button-outline" id="newFolderBtn">＋ Nueva carpeta</button><label class="button button-small button-primary upload-label" for="fileInput">↑ Subir archivos</label><input id="fileInput" type="file" multiple hidden></div>
+          </div>
+          <div class="manager-search"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar carpetas o archivos..."><span class="search-shortcut">BUSCAR</span></div>
+          <div class="manager-tools"><button id="upBtn" class="text-button" disabled>← Volver a la carpeta anterior</button><span id="itemCount">0 elementos</span></div>
+          <div id="notice" class="notice" role="status" aria-live="polite"></div>
+          <div id="itemsGrid" class="items-grid"></div>
+          <div id="emptyState" class="empty-state"><div class="empty-icon">▱</div><h4>Tu espacio está listo</h4><p>Crea una carpeta para una asignatura o sube tu primer trabajo.</p><button class="button button-primary button-small" id="emptyCreateBtn">＋ Crear primera carpeta</button></div>
+        </div>
+      </div>
+      <p class="privacy-note">No subas documentos privados o información sensible. Para tener archivos privados en línea, más adelante conectaremos un servicio con inicio de sesión y permisos.</p>
+    </section>
+    <footer><a class="brand" href="#inicio"><span class="brand-mark">A</span><span>ANGEL<span class="brand-dot">.</span></span></a><span>Portafolio académico · Stiff Angel Rojas Ruiz</span><a href="#inicio">Volver arriba ↑</a></footer>
+  </main>
+
+  <dialog id="renameDialog" class="modal"><form method="dialog" id="renameForm"><p class="eyebrow">EDITAR ELEMENTO</p><h3>Renombrar</h3><label for="renameInput">Nuevo nombre</label><input id="renameInput" maxlength="100" required><div class="modal-actions"><button class="button button-quiet" value="cancel">Cancelar</button><button class="button button-primary" id="renameSaveBtn" value="save">Guardar</button></div></form></dialog>
+  <dialog id="deleteDialog" class="modal"><form method="dialog" id="deleteForm"><p class="eyebrow">CONFIRMAR ACCIÓN</p><h3>¿Eliminar este elemento?</h3><p id="deleteMessage">Esta acción no se puede deshacer.</p><div class="modal-actions"><button class="button button-quiet" value="cancel">Cancelar</button><button class="button button-danger" id="deleteConfirmBtn" value="delete">Eliminar</button></div></form></dialog>
+
+  <dialog id="viewerDialog" class="modal viewer-modal">
+    <div class="viewer-header">
+      <h3 id="viewerName">Archivo</h3>
+      <button class="viewer-close" id="viewerCloseBtn" title="Cerrar">✕</button>
+    </div>
+    <div id="viewerBody" class="viewer-body"></div>
+    <div class="modal-actions">
+      <button class="button button-quiet" id="viewerCloseBtn2">Cerrar</button>
+      <a class="button button-primary" id="viewerDownloadBtn">Descargar ↓</a>
+    </div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
